@@ -5,6 +5,6 @@ services:
     ports:
       - "8080:8080/tcp"
     volumes:
-      - "./base:/vripper/data"
+      - "./data:/vripper/data"
       - "./downloads:/downloads"
     restart: "unless-stopped"
