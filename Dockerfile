@@ -10,7 +10,7 @@ RUN mvn package -Dmaven.test.skip=true
 FROM amazoncorretto:11 AS run
 
 ARG VERSION
-ENV VERSION=${VERSION:-3.5.4}
+ENV VERSION=${VERSION:-3.5.5}
 ENV JAR_FILE=vripper-server-${VERSION}-web.jar
 ENV VRIPPER_DIR=/vripper
 ENV DOWNLOAD_DIR=/downloads
