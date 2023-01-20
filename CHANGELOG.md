@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.5.5] - 2022-01-20
+
+### Changed
+
+- Fixed ImageBam downloads
+
 ## [3.5.4] - 2021-05-29
 
 ### Changed
