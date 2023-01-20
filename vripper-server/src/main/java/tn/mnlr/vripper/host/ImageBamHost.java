@@ -12,6 +12,9 @@ import tn.mnlr.vripper.services.HostService;
 import tn.mnlr.vripper.services.XpathService;
 
 import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+import java.time.format.DateTimeFormatter;
+
 
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
@@ -78,9 +81,8 @@ public class ImageBamHost extends Host {
 	HttpClient client = cm.getClient().build();
 	HttpGet httpGet = cm.buildHttpGet(url, context);
 	httpGet.addHeader("Referer", url);
-	long expireTime=Instant.now().getEpochSecond();
-	expireTime+=6*60*60*1000;
-	httpGet.addHeader("Cookie", "nsfw_inter=1");
+	
+	httpGet.addHeader("Cookie", "nsfw_inter=1; Path=/; Expires=Tue, 01 Jan 2030 00:00:00 GMT;");
 	HttpResponse httpResponse;
 	
 	try {
@@ -104,6 +106,7 @@ public class ImageBamHost extends Host {
     }
 
     if (imgNode == null) {
+    
       throw new HostException(String.format("Xpath '%s' cannot be found in '%s'", IMG_XPATH, url));
     }
 
