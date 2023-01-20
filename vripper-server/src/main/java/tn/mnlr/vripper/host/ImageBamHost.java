@@ -12,9 +12,6 @@ import tn.mnlr.vripper.services.HostService;
 import tn.mnlr.vripper.services.XpathService;
 
 import java.time.Instant;
-import java.time.temporal.ChronoUnit;
-import java.time.format.DateTimeFormatter;
-
 
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
