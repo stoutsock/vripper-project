@@ -4,7 +4,7 @@ RUN mkdir /build
 COPY . /build
 
 WORKDIR /build
-RUN mvn package -Dmaven.test.skip=true
+RUN mvn clean package -Dmaven.test.skip=true
 
 
 FROM amazoncorretto:11 AS run
